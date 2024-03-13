@@ -44,7 +44,7 @@ img{
 
 .article-list{
   display: flex;
-  width: 700px;
+  width: 300px;
   height: auto;
   flex-direction: column;
   gap: 50px;
@@ -54,31 +54,14 @@ img{
   height: 100%;
 }
 
-.article-card{
-  display: grid;
-  grid-template-columns: 150px 200px 100px;
-  grid-template-rows: 100px;
-  gap: 20px;
-  border: solid 2px white;
-  padding: 20px;
-  border-radius: 10px;
-}
 
-.img-card{
-  grid-column: 1/span 1;
-}
 
 .img-card img{
   width: 100%;
   height: 100%;
-}
-.content-card{
-  grid-column: 2/span-1;
+  border-radius: 10px;
 }
 
-.button-card{
-  grid-column: 2/span1;
-}
 
 .button-card > *{
   width: 100px;
@@ -126,4 +109,10 @@ img{
 .article-container{
   display: flex;
   justify-content: center;
+}
+
+.button-container > *{
+  width: 100px;
+  padding: 10px 5px;
+  
 }

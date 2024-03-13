@@ -28,7 +28,6 @@ export const getSingleArticleByID = (article_id) =>{
 }
 
 export const getAllArticlesComments = (article_id)=>{
-    console.log('hi')
     return(
         philNewsAPI.get(`/articles/${article_id}/comments`)
         .then((result)=>{
@@ -36,6 +35,15 @@ export const getAllArticlesComments = (article_id)=>{
         })
         .catch((err)=>{
             console.log(err)
+        })
+    )
+}
+
+export const patchVotes = (article_id,obj) =>{
+    return(
+        philNewsAPI.patch(`/articles/${article_id}`,obj)
+        .then((result)=>{
+            return result.data;
         })
     )
 }
