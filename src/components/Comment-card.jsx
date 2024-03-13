@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 export default function CommentCard(props){
 const { article_id } = useParams();
 
-  console.log(props.comments)
+//   console.log(props.comments)
     return(
         <>
         <section className="comments-field">
