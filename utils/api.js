@@ -47,3 +47,15 @@ export const patchVotes = (article_id,obj) =>{
         })
     )
 }
+
+export const postComment = (article_id,obj)=>{
+    return(
+        philNewsAPI.post(`/articles/${article_id}/comments`,obj)
+        .then((result)=>{
+            return result.data
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    )
+}

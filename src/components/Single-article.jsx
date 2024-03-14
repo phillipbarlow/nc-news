@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getSingleArticleByID, getAllArticlesComments, patchVotes} from "../../utils/api";
 import CommentCard from "./Comment-card";
 import { useParams } from 'react-router-dom';
+import PostComment from "./Post-comment";
 
 export default function SingleArticle(){
     const [article,setArticle] = useState({});
@@ -58,6 +59,7 @@ export default function SingleArticle(){
                     </section> 
             </section>
             <CommentCard comments={comments} />
+            <PostComment setComments={setComments}/>
             </>
         )
     }
