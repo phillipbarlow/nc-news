@@ -104,6 +104,8 @@ img{
   padding: 50px;
   height: auto;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .article-container{

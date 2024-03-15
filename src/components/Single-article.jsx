@@ -34,7 +34,7 @@ export default function SingleArticle(){
           .then((data)=>{
               setComments(data)
             })
-        },[article_id])
+        },[article_id, setComments])
       
       if(!isLoaded){
         return(
@@ -58,7 +58,7 @@ export default function SingleArticle(){
                         </section>
                     </section> 
             </section>
-            <CommentCard comments={comments} />
+            <CommentCard comments={comments} setComments={setComments}/>
             <PostComment setComments={setComments}/>
             </>
         )
