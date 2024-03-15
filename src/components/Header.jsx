@@ -1,11 +1,18 @@
 import { Routes, Route, Link} from 'react-router-dom';
-import {useState } from "react";
+import {useState, useEffect } from "react";
 import Users from './Users';
+import {getAllTopics} from '../../utils/api'
 
 export default function Header(){
-    function handleUser(){
+    // const [topic,setTopic] = useEffect()
+    // useEffect(()=>{
+    //     getAllTopics()
+    //     .then((result)=>{
+    //         setTopic(result.data)
+    //     })
+    //     console.log(topic)
+    // },[])
 
-    }
     return(
         <header>
         <h1>Phil's News read all about it!</h1>

@@ -19,7 +19,6 @@ const loggedUser = loggedInUser.username
             props.setComments((current)=>{
                 const filtered = current.filter(comment => comment.comment_id !== event.comment_id)
                 const newComments = [...filtered]
-                console.log(newComments)
                 return newComments
             })
             return response.data

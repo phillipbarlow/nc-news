@@ -59,3 +59,32 @@ export const postComment = (article_id,obj)=>{
         })
     )
 }
+
+export const getAllUsers = () =>{
+    return(
+        philNewsAPI.get('/users')
+        .then((result)=>{
+            // console.log(result.data)
+            return result.data
+        })
+    )
+}
+
+export const deleteComment = (comment_id) =>{
+    return(
+        philNewsAPI.delete(`/comments/${comment_id}`)
+        .then((result)=>{
+            console.log(result,'--api response')
+            return result.data
+        })
+    )
+}
+
+export const getAllTopics = ()=>{
+    return(
+        philNewsAPI.get('/api/topics')
+        .then((result)=>{
+            return result.data
+        })
+    )
+}
