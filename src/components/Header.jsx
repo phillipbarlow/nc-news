@@ -2,17 +2,16 @@ import { Routes, Route, Link} from 'react-router-dom';
 import {useState, useEffect } from "react";
 import Users from './Users';
 import {getAllTopics} from '../../utils/api'
-
+// import Topic from '../components/All-topics'
 export default function Header(){
-    // const [topic,setTopic] = useEffect()
-    // useEffect(()=>{
-    //     getAllTopics()
-    //     .then((result)=>{
-    //         setTopic(result.data)
-    //     })
-    //     console.log(topic)
-    // },[])
-
+    
+    const [topics,setTopics] = useState([])
+    useEffect(()=>{
+        getAllTopics()
+        .then((result)=>{
+            setTopics(result)
+        })
+    },[])
     return(
         <header>
         <h1>Phil's News read all about it!</h1>
@@ -20,10 +19,11 @@ export default function Header(){
         <button><Link to={'/'}>Home</Link></button>
         <nav>
             <ol>
-                <li>Topic 1</li>
-                <li>Topic 2</li>
-                <li>Topic 3</li>
-                <li>Topic 4</li>
+                {topics.map(topic=>{
+                   return (<li key={topic.slug}>
+                    {/* <Link to={`/articles?topic=${topic.slug}`}>{topic.slug}</Link></li>) */}
+                    <Link to={`/articles/${topic.slug}`}>{topic.slug}</Link></li>)
+                })}
             </ol>
         </nav>
         </header>

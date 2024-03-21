@@ -3,7 +3,7 @@ export default function ArticleCard({item}){
     return(
         <section className='article-wrapper'>
                 <section className="article-card">
-                    <Link to={`/articles/${item.article_id}`}>
+                    <Link to={`/article/${item.article_id}`}>
                     <div className="img-card">
                         <img src={item.article_img_url} alt={`Describing ${item.topic}`}/>   
                     </div>

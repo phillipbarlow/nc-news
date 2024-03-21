@@ -29,6 +29,7 @@ export default function SingleArticle(){
             setButtonCount(data[0].votes)
         })
       },[article_id])
+
       useEffect(()=>{
           getAllArticlesComments(article_id)
           .then((data)=>{

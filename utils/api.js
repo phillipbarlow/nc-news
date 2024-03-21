@@ -82,7 +82,16 @@ export const deleteComment = (comment_id) =>{
 
 export const getAllTopics = ()=>{
     return(
-        philNewsAPI.get('/api/topics')
+        philNewsAPI.get('/topics')
+        .then((result)=>{
+            return result.data
+        })
+    )
+}
+
+export const getCurrentTopic = (topic) =>{
+    return(
+        philNewsAPI.get(`/articles?topic=${topic}`)
         .then((result)=>{
             return result.data
         })
