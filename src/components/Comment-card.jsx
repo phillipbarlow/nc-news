@@ -9,7 +9,6 @@ const { article_id } = useParams();
 const {isError,setIsError} = useState(false)
 const {loggedInUser,setLoggedInUser} = useContext(UserContext);
 const loggedUser = loggedInUser.username
-// console.log(props)
 
 
     function handleBtn(event){

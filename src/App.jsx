@@ -10,19 +10,19 @@ import RelatedArticleTopic from './components/Article-topics'
 function App() {
   const [searchParams] = useSearchParams();
   const getTopic = searchParams.get("topic");
-  console.log(getTopic)
   return (
+    <div className='App'>
       <LoggedInProvidor>
       <Header/>
       <Routes>
         <Route path='/' element={< ArticleList/>}/>
-        {/* <Route path={`/articles/${getTopic}`} element={<RelatedArticleTopic/>}/> */}
         <Route path='/article/:article_id' element={<SingleArticle/>}/>
         <Route path='/articles/:topic' element={<RelatedArticleTopic/>}/>
         <Route path='/articles/:article_id/comments' element={<CommentCard/>}/>
         <Route path='/users' element={<Users/>}/>
       </Routes>
       </LoggedInProvidor>
+    </div>
   )
 }
 

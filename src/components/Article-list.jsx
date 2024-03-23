@@ -25,7 +25,6 @@ export default function ArticleList(){
                     {articles.map(item =>{
                         return(
                             <ArticleCard item={item} key={item.article_id}/>
-                            
                         )
                     })}
                 </ul>
