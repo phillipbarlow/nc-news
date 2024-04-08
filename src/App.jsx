@@ -11,7 +11,6 @@ function App() {
   const [searchParams] = useSearchParams();
   const getTopic = searchParams.get("topic");
   return (
-    <div className='App'>
       <LoggedInProvidor>
       <Header/>
       <Routes>
@@ -22,7 +21,6 @@ function App() {
         <Route path='/users' element={<Users/>}/>
       </Routes>
       </LoggedInProvidor>
-    </div>
   )
 }
 

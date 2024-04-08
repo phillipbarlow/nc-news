@@ -14,12 +14,13 @@ export default function RelatedArticleTopic(){
     },[topic])
 
     return(
-        <ul>
+        <ul className='all-comments'>
             {relatedArticles.map(article=>{
                 return(
                     <li key={article.article_id}>
-                        <p>{article.author}</p>
-                        <p>{article.title}</p>
+                        <p>Title: {article.title}</p>
+                        <p>Author: {article.author}</p>
+                        <p>Topic: {article.topic}</p>
                         <p>{article.created_at}</p>
                     </li>
                 )

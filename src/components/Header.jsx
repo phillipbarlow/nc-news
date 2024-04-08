@@ -15,7 +15,7 @@ export default function Header(){
 
     return(
         <header>
-        <Nav topics={topics}/>
+            <Nav topics={topics}/>
         </header>
     )
 }

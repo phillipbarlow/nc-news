@@ -15,7 +15,7 @@ const Nav = ({topics}) => {
         <Link className='title' to="/">Phil's News read all about it!</Link >
         <ol className={menuOpen?"open":""}>
             {topics.map(topic=>{
-                return (<li key={topic.slug}>
+                return (<li key={topic.slug} className='nav-item'>
                 <NavLink to={`/articles/${topic.slug}`}>{topic.slug}</NavLink></li>)
             })}
         </ol>

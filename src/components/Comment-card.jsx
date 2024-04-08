@@ -33,7 +33,17 @@ const loggedUser = loggedInUser.username
         <section className="comments-field">
         {props.comments.map(data=>{
             return(
-                <li key={data.comment_id} className="single-comment" >{isError?<p>Error</p>:null}{data.article_id === Number(article_id)?data.body:null}<button onClick={()=>{handleBtn(data)}}>Delete</button></li>
+                <li key={data.comment_id} className="single-comment" >{isError?<p>Error</p>:null}{data.article_id === Number(article_id)?
+                    <>
+                    <section className='comment-title-container'>
+                        <section className='comment-author'>Author: {data.author}</section>
+                        <section className='created-title'>Created: {data.created_at}</section>
+                    </section>
+                    <section className='comment-bodyTxt'>{data.body}</section>
+    
+                </>
+                :null}
+                <button onClick={()=>{handleBtn(data)}} className='delete-btn'>Delete</button></li>
             )
         })}
      </section>

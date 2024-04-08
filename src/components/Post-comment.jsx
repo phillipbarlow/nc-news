@@ -26,7 +26,7 @@ export default function PostComment({setComments}){
     })
         }            
     return(
-        <>
+        <div className="form-container">
         <h2>Post comment</h2>
         <form onSubmit={(event)=>{
             handleSubmit(event)
@@ -38,8 +38,8 @@ export default function PostComment({setComments}){
             <textarea name="textfield" cols="30" rows="10" onChange={(event)=>{
                 setTextField(event.target.value)}} id="textfield" value={textField} required></textarea>
             {isPosted?<h2>posted!</h2>:null}
-            <button type="submit">Submit!</button>
+            <button type="submit" className='submit-btn'>Submit!</button>
         </form>
-        </>
+        </div>
     )
 }

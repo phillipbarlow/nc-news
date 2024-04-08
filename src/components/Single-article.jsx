@@ -3,6 +3,7 @@ import { getSingleArticleByID, getAllArticlesComments, patchVotes} from "../../u
 import CommentCard from "./Comment-card";
 import { useParams } from 'react-router-dom';
 import PostComment from "./Post-comment";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function SingleArticle(){
     const [article,setArticle] = useState({});
@@ -43,25 +44,24 @@ export default function SingleArticle(){
         )
     }else{
         return(
-            <>
             <section className="article-container">
-            <section className="single-article" key={article.article_id}>
-                        <h2>{article.title}</h2>
+            {/* <section className="single-article" key={article.article_id}> */}
+                        <h2 className="article-title">{article.title}</h2>
                         <img src={article.article_img_url} alt={`Description of ${article.title}`}/>
-                        <p>Created by: {article.author}</p>
-                        <p>{article.body}</p>
+                        <p className="articleBody">{article.body}</p>
                         <p>Created at: {article.created_at}</p>
-                        {<p>Total Votes:{buttonCount}</p>}
                         <p>Comment count: {article.comment_count}</p>
                         <section className="button-container">
-                            <button onClick={()=>{handleBtn(1)}}>+</button>
-                            <button onClick={()=>{handleBtn(-1)}}>-</button>
+                            <button onClick={()=>{handleBtn(1)}} className="comment-count-btn">
+                                <i className='fas fa-angle-up'></i></button>
+                                <div className="count-preview">{buttonCount}</div>
+                            <button onClick={()=>{handleBtn(-1)}} className="comment-count-btn"><i className='fas fa-angle-down'></i></button>
                         </section>
-                    </section> 
-            </section>
+                           <a href="#textfield" className="comment-btn"><button className="comment-btn"><i className='far fa-comment-alt'></i>Comment</button></a>
+                    {/* </section>  */}
             <CommentCard comments={comments} setComments={setComments}/>
             <PostComment setComments={setComments}/>
-            </>
+            </section>
         )
     }
 }
