@@ -4,8 +4,60 @@
   box-sizing: 0;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+html{
+  height: 100vh;
+}
+/* users */
+.all-users-container{
+ display: grid;
+ grid-template:"amy tom paul"
+ "peter gemma jess";
+ height:300px;
+ width:50%;
+ margin: 0 auto;
+ justify-content: center;
+ gap: 50px;
+ position: relative;
+ top:200px
+}
+.all-users-container > img{
+  height:150px;
 
+}
+.amy-happy{
+  grid-area:amy
+}
+.tom-tickle{
+  grid-area:tom
+}
+.paul-grump{
+  grid-area:paul
+}
+.peter-messy{
+  grid-area:peter
+}
+.gemma-bump{
+  grid-area:gemma
+}
+.jess-jelly{
+  grid-area:jess
+}
+.welcomeMsg{
+  text-align: center;
+  font-size: 1.5em;
+}
 /* Header section */
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+}
+
+.avatar{
+  overflow: hidden;
+  background-color: white;
+}
 
 header, nav, ol{
   height: auto;
@@ -360,6 +412,7 @@ header .menu span{
   color:white;
   transition: transform .5s;
 }
+
 @media(max-width:480px) {
   header .menu{
     display: flex;

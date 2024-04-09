@@ -10,7 +10,6 @@ const {isError,setIsError} = useState(false)
 const {loggedInUser,setLoggedInUser} = useContext(UserContext);
 const loggedUser = loggedInUser.username
 
-
     function handleBtn(event){
     if(loggedUser === event.author){
         deleteComment(event.comment_id)
@@ -43,7 +42,7 @@ const loggedUser = loggedInUser.username
     
                 </>
                 :null}
-                <button onClick={()=>{handleBtn(data)}} className='delete-btn'>Delete</button></li>
+                <button onClick={()=>{handleBtn(data)}} className='delete-btn' style={{ display: data.author !== loggedUser ? 'none' : 'block' }}>Delete</button></li>
             )
         })}
      </section>

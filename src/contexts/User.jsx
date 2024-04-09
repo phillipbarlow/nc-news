@@ -5,7 +5,8 @@ export const UserContext = createContext();
 export const LoggedInProvidor = ({children}) =>{
     const [loggedInUser, setLoggedInUser] = useState({
         username:'tickle122',
-        avatar_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fgrumpy&psig=AOvVaw2p6inP2Sxial9k138copFG&ust=1710512750767000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMCimdr684QDFQAAAAAdAAAAABAE"
+        avatar_url: 
+        "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953"
       })
       return (
         <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>{children} </UserContext.Provider>
