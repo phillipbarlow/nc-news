@@ -33,7 +33,6 @@ export default function Users(){
             console.log(err)
         })
     }
-// console.log(users[0])
     useEffect(()=>{
         handleUserIcons()
         setIsLoaded(true)
@@ -41,10 +40,11 @@ export default function Users(){
     useEffect(()=>{
     },[loggedInUser])
     if(!isLoaded){
-        return <p>Loading</p>
+        return <p className="loading-text">Loading</p>
     }else{
         return(
             <>         
+                <h2 className="loginHeading">Choose one to login!</h2>
             <div className="all-users-container">
             {users? users[0].map((user)=>{
             return <img src={user.avatar_url} alt="user avatar" key={user.name} className={user.name.split(' ').join('-').toLowerCase()} onClick={handleSubmit}

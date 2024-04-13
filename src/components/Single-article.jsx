@@ -45,7 +45,6 @@ export default function SingleArticle(){
     }else{
         return(
             <section className="article-container">
-            {/* <section className="single-article" key={article.article_id}> */}
                         <h2 className="article-title">{article.title}</h2>
                         <img src={article.article_img_url} alt={`Description of ${article.title}`}/>
                         <p className="articleBody">{article.body}</p>
@@ -58,7 +57,6 @@ export default function SingleArticle(){
                             <button onClick={()=>{handleBtn(-1)}} className="comment-count-btn"><i className='fas fa-angle-down'></i></button>
                         </section>
                            <a href="#textfield" className="comment-btn"><button className="comment-btn"><i className='far fa-comment-alt'></i>Comment</button></a>
-                    {/* </section>  */}
             <CommentCard comments={comments} setComments={setComments}/>
             <PostComment setComments={setComments}/>
             </section>

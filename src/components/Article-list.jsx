@@ -29,7 +29,7 @@ export default function ArticleList(){
         <ul className="article-list">
             {articles.map(item =>{
                 return(
-                <ArticleCard className="articleCard" item={item} key={item.article_id}/>
+                <ArticleCard item={item} key={item.article_id}/>
                 )
             })}
         </ul>

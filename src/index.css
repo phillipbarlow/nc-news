@@ -144,6 +144,7 @@ header .menu{
   justify-content: space-between;
   width: 2.25rem;
   height: 2rem;
+  margin-right: 2%;
 }
 
 header .menu span{
@@ -285,7 +286,7 @@ header .menu span{
   border-radius: 5px;
 }
 .articleBody{
-  max-width: 50%;
+  width: 50%;
   font-size: 1.2em;
 }
 .button-container{
@@ -413,7 +414,38 @@ header .menu span{
   transition: transform .5s;
 }
 
-@media(max-width:480px) {
+@media only screen and (max-width:480px) and (min-width: 400px)  {
+  /* loading text */
+  .loading-text{
+    text-align: center;
+  }
+  /* header */
+  .welcomeOpenMsg{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5em;
+    width: 100%;
+    background-color: #457b9d;
+    padding: 5px;
+  }
+  .avatar {
+    background-color: transparent;
+  }
+  .avatar-container{
+    display: flex;
+    justify-content: center;
+  }
+  header{
+    width:430px;
+    z-index: 99;
+  }
+  header::after{
+    display: none;
+  }
+  nav{
+    background-color: #a8b8d0;
+  }
   header .menu{
     display: flex;
   }
@@ -421,6 +453,9 @@ header .menu span{
     flex-direction: column;
     align-items: start;
     height: auto;
+  }
+  .title{
+    width: 200px;
   }
   nav ol{
     display: none;
@@ -432,8 +467,74 @@ header .menu span{
     width: 100%;
     text-align: center;
     margin: 0.2rem 0.5rem;
+    font-size: 1.2em;
+    text-transform: uppercase;
   }
   nav ol.open{
     display: flex;
+  }
+  .nav-item{
+    color: white;
+  }
+
+  /* Individual article */
+  .article-card{
+    width: 300px;
+  }
+  .articleBody{
+    font-size: 14px;
+    width: auto;
+  }
+  .form-container{
+    margin-bottom: 50px;
+  }
+  #textfield{
+    width: 300px;
+    margin: 0 auto;
+  }
+  .submit-btn{
+    width: 200px;
+    margin: 0 auto;
+  }
+  /* all topics */
+  .all-comments{
+    width: 300px;
+
+  }
+  .all-comments li{
+    font-size: 14px;
+  }
+  /* Article list section */
+
+  .article-card {
+    max-width: 350px;
+  }
+  .cardcontent{
+    font-size: 14px;
+  }
+  .img-card img{
+    height: 200px;
+  }
+  .articeCreatedBy-title{
+    font-style: italic;
+    font-size: 10px;
+  }
+  /* All users */
+  .loginHeading{
+    text-align: center;
+    margin-top: 50px;
+  }
+  .all-users-container{
+    grid-template:"amy tom"
+                  "paul peter"
+                  "gemma jess";
+    height: auto;
+    top:50px;
+    justify-content: center;
+    align-items: center;            
+  }
+  .all-users-container > img{
+    width: 100px;
+    height: auto;
   }
 }

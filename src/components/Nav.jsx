@@ -5,7 +5,6 @@ import {UserContext} from "../contexts/User";
 const Nav = ({topics}) => {
     const [menuOpen, setMenuOpen] = useState(false)
     const {loggedInUser,setLoggedInUser} = useContext(UserContext);
-    console.log(loggedInUser)
   return (
     <>
     <nav>
@@ -20,12 +19,15 @@ const Nav = ({topics}) => {
         <ol className={menuOpen?"open":""}>
             {topics.map(topic=>{
                 return (<li key={topic.slug} className='nav-item'>
-                <NavLink to={`/articles/${topic.slug}`}>{topic.slug}</NavLink></li>)
+                <NavLink to={`/articles/${topic.slug}`} className="nav-item">{topic.slug}</NavLink></li>)
             })}
-            <NavLink to={'/users'}><img src={loggedInUser.avatar_url} alt="Avatar" className="avatar"></img></NavLink>
+            <NavLink to={'/users'} className="avatar-container">
+                <img src={loggedInUser.avatar_url} alt="Avatar" className="avatar"/>
+            </NavLink>
+                
         </ol>
+        {menuOpen ?<p className='welcomeOpenMsg'>Welcome {loggedInUser.username}</p>: ""}
     </nav>
-    <p className='welcomeMsg'>Welcome {loggedInUser.username}</p>
     </>
   )
 }
