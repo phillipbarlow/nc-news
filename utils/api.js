@@ -74,7 +74,6 @@ export const deleteComment = (comment_id) =>{
     return(
         philNewsAPI.delete(`/comments/${comment_id}`)
         .then((result)=>{
-            console.log(result,'--api response')
             return result.data
         })
     )

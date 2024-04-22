@@ -40,7 +40,7 @@ export default function SingleArticle(){
       
       if(!isLoaded){
         return(
-            <p>Loading comments!</p>
+            <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         )
     }else{
         return(

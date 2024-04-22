@@ -1,7 +1,6 @@
 import { Routes, Route, Link} from 'react-router-dom';
 
 export default function ArticleCard({item}){
-    // console.log(item)
     return(
             <section className="article-card">
                 <Link to={`/article/${item.article_id}`} style={{ textDecoration: 'none' }}>

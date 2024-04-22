@@ -3,10 +3,7 @@ import { getArticles } from "../../utils/api"
 import ArticleCard from "./Article-card";
 
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+
 
 export default function ArticleList(){
     const [articles,setArticles] = useState([]);
@@ -22,7 +19,7 @@ export default function ArticleList(){
 
     if(!isLoaded){
         return(
-            <p>Loading articles!</p>
+            <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         )
     }else{
         return(

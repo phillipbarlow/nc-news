@@ -5,9 +5,9 @@ import {UserContext} from "../contexts/User";
 
 export default function Users(){
     const {loggedInUser,setLoggedInUser} = useContext(UserContext);
-    const [login,setLogin] = useState();
+    // const [login,setLogin] = useState();
     const [users,setUsers] = useState();
-    const [userName, setUserName] = useState(false);
+    // const [userName, setUserName] = useState(false);
     const[isLoaded,setIsLoaded] = useState(false);
 
     function handleSubmit(event){
@@ -40,7 +40,8 @@ export default function Users(){
     useEffect(()=>{
     },[loggedInUser])
     if(!isLoaded){
-        return <p className="loading-text">Loading</p>
+        return (<div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    )
     }else{
         return(
             <>         
