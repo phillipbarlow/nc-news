@@ -43,9 +43,10 @@ export default function Users(){
         return (<div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     )
     }else{
+        console.log(loggedInUser)
         return(
             <>         
-                <h2 className="loginHeading">Choose one to login!</h2>
+            <h2 className="loginHeading">Welcome {loggedInUser.username}!</h2>
             <div className="all-users-container">
             {users? users[0].map((user)=>{
             return <img src={user.avatar_url} alt="user avatar" key={user.name} className={user.name.split(' ').join('-').toLowerCase()} onClick={handleSubmit}
