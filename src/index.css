@@ -551,6 +551,7 @@ header .menu span{
   }
   nav{
     background-color: #a8b8d0;
+    z-index: 99;
   }
   header .menu{
     display: flex;
